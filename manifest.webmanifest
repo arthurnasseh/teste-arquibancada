@@ -1,9 +1,9 @@
 {
-  "id": "./",
+  "id": "/arquibancada-teste/",
   "name": "Arquibancada TESTE",
   "short_name": "TESTE",
   "description": "Registro dos jogos do Flamengo vistos de perto.",
-  "start_url": "./",
+  "start_url": "./?app=teste",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
