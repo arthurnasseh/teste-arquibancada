@@ -1,13 +1,16 @@
 /* Diário de Arquibancada — guarda o app no aparelho para abrir sem internet */
 /* a versão é preenchida pelo empacotar.mjs com um código do conteúdo do app: toda mudança vira um cache novo */
-const CACHE = 'arquibancada-teste-1f3a01950f';
+const CACHE = 'arquibancada-teste-e51a508b27';
 /* oficial e teste moram no mesmo domínio e dividem os caches: cada um só limpa os seus */
 const MEU = (k) => ('arquibancada-teste' === 'arquibancada-teste') === k.startsWith('arquibancada-teste-');
 
-/* O app inteiro está no index.html. Os outros arquivos são extras:
-   se algum faltar, o cache continua valendo em vez de falhar inteiro. */
+/* O começo do app está no index.html. As PARTES (a Geral e as abas, carregadas sob demanda) são arquivos
+   ao lado dele, e a lista é preenchida pelo empacotar.mjs: o service worker baixa todas em segundo plano
+   ao instalar, para o app continuar abrindo inteiro sem internet. Os outros arquivos são extras.
+   Se um extra ou uma parte faltar, o cache continua valendo em vez de falhar inteiro. */
 const ESSENCIAL = ['./', './index.html'];
-const EXTRAS = ['./manifest.webmanifest', './icon-192.png', './icon-512.png', './apple-touch-icon.png', './badge-96.png'];
+const PARTES = ["./Arquivo.76c3ddd2.js", "./Carimbos.66258f31.js", "./Geral.e1300ebd.js", "./Listas.4b7c6b06.js", "./Mantos.14a89d9d.js", "./MatchForm.6e8770be.js", "./Personalizacao.b2f627cd.js", "./Registro.be031a7d.js"].filter((u) => u.startsWith('./'));
+const EXTRAS = ['./manifest.webmanifest', './icon-192.png', './icon-512.png', './apple-touch-icon.png', './badge-96.png', ...PARTES];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(
