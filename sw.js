@@ -1,6 +1,6 @@
 /* Diário de Arquibancada — guarda o app no aparelho para abrir sem internet */
 /* a versão é preenchida pelo empacotar.mjs com um código do conteúdo do app: toda mudança vira um cache novo */
-const CACHE = 'arquibancada-teste-8a05c08a83';
+const CACHE = 'arquibancada-teste-feb57fd113';
 /* Os dois ambientes moram no mesmo domínio e dividem os caches: cada um só limpa os seus.
    O empacotar.mjs preenche o padrão: o nome do cache é o prefixo do ambiente mais 10 letras da versão. */
 const MEU = (k) => /^arquibancada-teste-[0-9a-f]{10}$/.test(k);
