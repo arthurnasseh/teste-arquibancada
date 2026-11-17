@@ -1,6 +1,6 @@
 /* Diário de Arquibancada — guarda o app no aparelho para abrir sem internet */
 /* a versão é preenchida pelo empacotar.mjs com um código do conteúdo do app: toda mudança vira um cache novo */
-const CACHE = 'arquibancada-teste-15f0417362';
+const CACHE = 'arquibancada-teste-31e7cb38df';
 /* Os dois ambientes moram no mesmo domínio e dividem os caches: cada um só limpa os seus.
    O empacotar.mjs preenche o padrão: o nome do cache é o prefixo do ambiente mais 10 letras da versão. */
 const MEU = (k) => /^arquibancada-teste-[0-9a-f]{10}$/.test(k);
@@ -10,7 +10,7 @@ const MEU = (k) => /^arquibancada-teste-[0-9a-f]{10}$/.test(k);
    ao instalar, para o app continuar abrindo inteiro sem internet. Os outros arquivos são extras.
    Se um extra ou uma parte faltar, o cache continua valendo em vez de falhar inteiro. */
 const ESSENCIAL = ['./', './index.html'];
-const PARTES = ["./Album.f4488c0f.js", "./Arquivo.76c3ddd2.js", "./Carimbos.948aa5e7.js", "./ComoFoi.a9f70fec.js", "./CompletarIngresso.b74efebe.js", "./Conquistas.b50bc2e3.js", "./contornos.79b8a9db.js", "./FolhaPalpite.6b38857f.js", "./Geral.6a84fbb2.js", "./Geral.98c8d87b.js", "./Listas.4b7c6b06.js", "./Mantos.52b10efe.js", "./MarcarJogos.320fc724.js", "./MatchForm.f90a566e.js", "./Personalizacao.9c8c114b.js", "./Pitch.95fb72b4.js", "./Registro.f47282f7.js", "./Retrospectiva.ccbfcd9d.js", "./textosLegais.5f2a3294.js", "./escudo-brasileirao.webp", "./escudo-carioca.webp", "./escudo-copadobrasil.webp", "./escudo-flamengo.webp", "./escudo-intercontinental.webp", "./escudo-libertadores.webp", "./escudo-recopa.webp", "./escudo-supercopa.webp"].filter((u) => u.startsWith('./'));
+const PARTES = ["./Album.f4488c0f.js", "./Arquivo.76c3ddd2.js", "./Carimbos.948aa5e7.js", "./ComoFoi.a9f70fec.js", "./CompletarIngresso.b74efebe.js", "./Conquistas.b50bc2e3.js", "./contornos.79b8a9db.js", "./FolhaPalpite.6b38857f.js", "./Geral.6a84fbb2.js", "./Geral.98c8d87b.js", "./Listas.4b7c6b06.js", "./Mantos.52b10efe.js", "./MarcarJogos.ff5dbf9c.js", "./MatchForm.7196c370.js", "./Personalizacao.9c8c114b.js", "./Pitch.95fb72b4.js", "./Registro.f47282f7.js", "./Retrospectiva.ccbfcd9d.js", "./textosLegais.5f2a3294.js", "./escudo-brasileirao.webp", "./escudo-carioca.webp", "./escudo-copadobrasil.webp", "./escudo-flamengo.webp", "./escudo-intercontinental.webp", "./escudo-libertadores.webp", "./escudo-recopa.webp", "./escudo-supercopa.webp"].filter((u) => u.startsWith('./'));
 const EXTRAS = ['./manifest.webmanifest', './icon-192.png', './icon-512.png', './apple-touch-icon.png', './badge-96.png', ...PARTES];
 
 self.addEventListener('install', (e) => {
